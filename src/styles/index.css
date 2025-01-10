@@ -1,12 +1,79 @@
+/* Contenedor principal centrado */
+.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea horizontalmente al centro */
+    justify-content: flex-start; /* El contenido empieza desde la parte superior */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    text-align: center; /* Centra el texto */
 
-/* 
+    overflow-y: auto; /* Permite el desplazamiento vertical si hay más contenido */
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+/* Cabecera sin `position: sticky` */
+input{
+    margin: 20px;
+}
 
-*/
+/* Título */
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-color: white;
+    width: 100%;
+    height: 60px; /* Altura del título */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la lista */
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 400px; /* Limita el ancho máximo */
+    padding-top: 10px; /* Espacio entre el título y la lista de tareas */
+}
+
+/* Estilo para cada tarea */
+.todo-item {
+    display: flex;
+    justify-content: space-between; /* Espacio entre la tarea y el botón */
+    align-items: center; /* Alineación vertical al centro */
+    padding: 10px;
+    height: 50px; /* Fija la altura de los elementos de la lista */
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    background-color: #f9f9f9; /* Fondo suave para las tareas */
+    border-radius: 5px;
+    position: relative; /* Necesario para el posicionamiento del botón de eliminar */
+    transition: all 0.3s ease; /* Transición suave al mostrar el botón */
+}
+
+/* Estilo del botón de eliminación */
+.delete-button {
+
+    color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 10px;
+    position: absolute; /* Posiciona el botón dentro del contenedor */
+    right: 10px; /* Lo coloca a la derecha del contenedor */
+    opacity: 0; /* El botón comienza oculto */
+    transition: opacity 0.3s ease; /* Transición suave para la aparición */
+}
+
+/* Muestra el botón de eliminar cuando el ratón pasa por encima */
+.todo-item:hover .delete-button {
+    opacity: 1; /* Hace visible el botón */
+}
+
+/* Estilo del botón al pasar el ratón */
+.delete-button:hover {
+    background: lightgrey;
+}
