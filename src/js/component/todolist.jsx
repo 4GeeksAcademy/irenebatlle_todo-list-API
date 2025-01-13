@@ -33,6 +33,16 @@ const ToDoList = () => {
 
   const activeTasksCount = toDos.filter((todo) => !todo.isCompleted).length;
 
+  const renderContent = () => {
+    if (activeTasksCount===1) {
+      return <p>Hay una tarea pendiente</p>;
+    } else if (activeTasksCount=== 0) {
+      return <p>No hay tareas pendientes</p>;
+    } else {
+      return <p>Hay {activeTasksCount} tareas pendientes</p>;
+    }
+  };
+
 
   return (
     <div className="text-center">
@@ -52,16 +62,19 @@ const ToDoList = () => {
             onMouseLeave={() => setHoveredIndex(null)}
             className="todo-item" 
           >
+            
             {todo}
             {hoveredIndex === index && (
               <button onClick={() => deleteTask(index)}  className="delete-button">
-                <i class="fa-regular fa-square-minus"></i>
+                <i class="fa-solid fa-trash"></i>
               </button>
             )}
           </li>
         ))}
       </ul>
-	  <p> Hay {activeTasksCount} tareas pendientes</p>
+	  <div>
+      {renderContent()}
+    </div>
     </div>
   );
 };
