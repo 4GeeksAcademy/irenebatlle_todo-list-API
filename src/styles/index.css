@@ -78,3 +78,9 @@ ul {
 .delete-button:hover {
     background: lightgrey;
 }
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+  

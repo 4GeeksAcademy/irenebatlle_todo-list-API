@@ -6,6 +6,8 @@ const ToDoList = () => {
   const [task, setTask] = useState("");
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
+
+  
   const addTask = () => {
     if (task.trim() !== "") {
       setToDos([...toDos, task]);
